@@ -1,6 +1,102 @@
 {% extends 'shared/base.html' %}
 
 
+{% block title %}
+    {% if title %}
+        {{ title }}
+    {% else %}
+        Home
+    {% endif %}
+{% endblock %}
+
+
 {% block main %}
-    <h1>Hello world</h1>
+    <section class="banner">
+        <h1 id="banner-title">
+            Find, install and publish Python packages with the Python
+            Package Index
+        </h1>
+
+        <form action="">
+            <label for="search">
+                <input id="search" type="text" placeholder="Search projects"
+                />
+            </label>
+        </form>
+
+        <p id="browse-projects">
+            Or
+            <a href="">browse projects</a>
+        </p>
+    </section>
+
+    <section id="statistics-section">
+        <div class="statistics-bar">
+            <p class="statistics-bar-item">340,327 projects</p>
+            <p class="statistics-bar-item">3,033,415 releases</p>
+            <p class="statistics-bar-item">5,183,530 files</p>
+            <p class="statistics-bar-item">551,975 users</p>
+        </div>
+    </section>
+
+    <section id="about-section">
+        <div id="about-section-content" class="container-width">
+            <div class="about-item" id="about-item-logo">
+                <img src="/static/icons/about-logo.svg" alt=""/>
+            </div>
+
+            <div class="about-item" id="about-item-text">
+                <p>
+                    The Python Package Index (PyPI) is a repository of
+                    software for the Python programming language.
+                </p>
+                <p>
+                    PyPI helps you find and install software developed
+                    and shared by the Python community.
+                    <a
+                            href="https://packaging.python.org/installing/"
+                            title="External link"
+                            target="_blank"
+                            rel="noopener"
+                    >Learn about installing packages
+                    </a>
+                </p>
+
+                <p>
+                    Package authors use PyPI to distribute their
+                    software.
+                    <a
+                            href="https://packaging.python.org/tutorials/packaging-projects/"
+                            title="External link"
+                            target="_blank"
+                            rel="noopener"
+                    >
+                        Learn how to package your Python code for PyPI </a
+                    >.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects-section">
+        <div id="projects-section-container" class="container-width">
+            <div class="projects-section-item">
+                <div id="new-packages">
+                    <h2 class="">New Packages</h2>
+                    <p class="">
+                        New packages uploaded by the community
+                    </p>
+                </div>
+            </div>
+
+            <div class="projects-section-item">
+                <div id="new-releases">
+                    <h2 class="">New Releases</h2>
+                    <p class="">
+                        Hot off the press: the newest project releases
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

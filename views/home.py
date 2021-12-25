@@ -8,5 +8,8 @@ templates = Jinja2Templates(directory="templates")
 
 @router.get("/")
 async def home(request: Request):
-    context = {"request": request}
+    context = {
+        "request": request,
+        "title": "Home",
+    }
     return templates.TemplateResponse("home/home.html", context)
