@@ -1,0 +1,63 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <form class="form-user" action="" method="post">
+        <h2>Register</h2>
+
+        <div class="form-input-wrapper">
+            <div class="form-input-item">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="form-input-item">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div id="password-input-wrapper" class="form-input-item">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div>
+                    <img id="password-show" src="/static/media/icon/pass-show.webp" alt="">
+                </div>
+
+                <ul id="password-validator" hidden>
+                    <li id="password-validator-length" class="password-validator-item">
+                        Must contain at least 8 characters
+                    </li>
+                    <li id="password-validator-number" class="password-validator-item">
+                        Must contain at least 1 number
+                    </li>
+                    <li id="password-validator-uppercase" class="password-validator-item">
+                        Must contain at least 1 uppercase character
+                    </li>
+
+                    <li id="password-validator-lowercase" class="password-validator-item">
+                        Must contain at least 1 lowercase character
+                    </li>
+                    <li id="password-validator-special-char" class="password-validator-item">
+                        Must contain at least 1 special character
+                    </li>
+                </ul>
+            </div>
+
+            <div class="form-input-item">
+                <input type="password" id="password-confirm" placeholder="Confirm password" required disabled>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="button-submit">Submit</button>
+        </div>
+
+        <p>
+            <small>
+                Already have an account? <a href="#">Login</a>
+            </small>
+        </p>
+    </form>
+
+{% endblock %}

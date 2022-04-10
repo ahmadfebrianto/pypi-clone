@@ -2,13 +2,14 @@ import uvicorn as uvicorn
 from fastapi import FastAPI
 from starlette.staticfiles import StaticFiles
 
-from views import home
+from views import home, user
 
 app = FastAPI()
 
 
 def configure_router():
     app.include_router(home.router)
+    app.include_router(user.router)
 
 
 def configure_static():
