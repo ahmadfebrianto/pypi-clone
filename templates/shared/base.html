@@ -25,7 +25,7 @@
             <nav id="navbar">
                 <a href="#">Help</a>
                 <a href="#">Sponsors</a>
-                <a href="#">Log in</a>
+                <a href="{{ request.url_for('login') }}">Log in</a>
                 <a href="{{ request.url_for('register') }}">Register</a>
             </nav>
         </div>
